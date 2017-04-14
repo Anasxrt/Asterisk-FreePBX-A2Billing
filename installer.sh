@@ -6,7 +6,8 @@
 apt-get update && apt-get upgrade -y 
 
 #Install Required Dependencies
-apt-get install -y build-essential linux-headers-`uname -r` openssh-server apache2 mysql-server
+#apt-get install -y build-essential linux-headers-`uname -r` 
+apt-get install -y openssh-server apache2 mysql-server
 apt-get install -y mysql-client bison flex php5 php5-curl php5-cli php5-mysql php-pear php5-gd curl sox
 apt-get install -y libncurses5-dev libssl-dev libmysqlclient-dev mpg123 libxml2-dev libnewt-dev sqlite3
 apt-get install -y libsqlite3-dev pkg-config automake libtool autoconf git unixodbc-dev uuid uuid-dev gcc make
@@ -37,8 +38,8 @@ ldconfig
 
 #Install and Configure Asterisk
 cd /usr/src
-wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz
-wget http://downloads.asterisk.org/pub/telephony/libpri/libpri-1.4-current.tar.gz
+#wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz
+#wget http://downloads.asterisk.org/pub/telephony/libpri/libpri-1.4-current.tar.gz
 wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-13-current.tar.gz
 wget -O jansson.tar.gz https://github.com/akheron/jansson/archive/v2.7.tar.gz
 wget http://www.pjsip.org/release/2.4/pjproject-2.4.tar.bz2
@@ -251,6 +252,7 @@ chown -R asterisk:asterisk /var/www/html/a2billing
 /etc/init.d/apache2 restart
 
 #write out current crontab
+touch a2billing_cron
 crontab -l > a2billing_cron
 
 #echo new cron into cron file
