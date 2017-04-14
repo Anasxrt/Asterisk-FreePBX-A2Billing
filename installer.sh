@@ -1,12 +1,7 @@
 #!/bin/bash
 
-#Installing Asterisk & FreePBX
-##############################
-
-# Allow login as root via SSH
-sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-service sshd restart
-
+#Prepare Debian8 OS on CloudRambo VPS
+######################################
 #Update Your System
 apt-get update && apt-get upgrade -y 
 
@@ -17,9 +12,20 @@ apt-get install -y libncurses5-dev libssl-dev libmysqlclient-dev mpg123 libxml2-
 apt-get install -y libsqlite3-dev pkg-config automake libtool autoconf git unixodbc-dev uuid uuid-dev gcc make
 apt-get install -y libasound2-dev libogg-dev libvorbis-dev libcurl4-openssl-dev libical-dev libneon27-dev libsrtp0-dev
 apt-get install -y libspandsp-dev sudo libmyodbc subversion vim-tiny libapache2-mod-php5 php-db php-soap
+apt-get install -y cron htop dos2unix
 
 #Install Legacy pear requirements
 pear install Console_Getopt
+
+
+
+
+#Installing Asterisk & FreePBX
+##############################
+
+# Allow login as root via SSH
+sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+service sshd restart
 
 #Installing Dependencies for Google Voice
 ###
