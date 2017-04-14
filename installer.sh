@@ -48,19 +48,19 @@ wget -O jansson.tar.gz https://github.com/akheron/jansson/archive/v2.7.tar.gz
 wget http://www.pjsip.org/release/2.4/pjproject-2.4.tar.bz2
 
 #Compile and install DAHDI (Needed for PSTN hardware, for example, a T1 or E1 card, or a USB device)
-cd /usr/src
-tar xvfz dahdi-linux-complete-current.tar.gz
-rm -f dahdi-linux-complete-current.tar.gz
-cd dahdi-linux-complete-*
-make all
-make install
-make config
-cd /usr/src
-tar xvfz libpri-1.4-current.tar.gz
-rm -f libpri-1.4-current.tar.gz
-cd libpri-*
-make
-make install
+#cd /usr/src
+#tar xvfz dahdi-linux-complete-current.tar.gz
+#rm -f dahdi-linux-complete-current.tar.gz
+#cd dahdi-linux-complete-*
+#make all
+#make install
+#make config
+#cd /usr/src
+#tar xvfz libpri-1.4-current.tar.gz
+#rm -f libpri-1.4-current.tar.gz
+#cd libpri-*
+#make
+#make install
 
 #Compile and install pjproject
 cd /usr/src
