@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#Prepare Debian8 OS on CloudRambo VPS
-######################################
+#Prepare Debian8 OS on CloudRambo VPS OpenVZ
+############################################0
 #Update Your System
 apt-get update && apt-get upgrade -y 
 
@@ -17,9 +17,6 @@ apt-get install -y cron htop dos2unix
 #Install Legacy pear requirements
 pear install Console_Getopt
 
-
-
-
 #Installing Asterisk & FreePBX
 ##############################
 
@@ -28,7 +25,6 @@ sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_c
 service sshd restart
 
 #Installing Dependencies for Google Voice
-###
 #Install iksemel
 cd /usr/src
 wget https://iksemel.googlecode.com/files/iksemel-1.4.tar.gz
